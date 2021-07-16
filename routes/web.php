@@ -19,6 +19,12 @@ Route::post('/contactRegistro', [registroControlador::class, 'registroUser'])->n
 
 Route::post('/contactInicio', [registroControlador::class, 'inicioSession'])->name('contactInicio');
 
+Route::get('/contactListar', [registroControlador::class, 'listarUser'])->name('contactListar');
+
+Route::get('/contactConsultar', [registroControlador::class, 'consultarUser'])->name('contactConsultar');
+
+Route::get('/contactConsultarB', [registroControlador::class, 'consultarUserB'])->name('contactConsultarB');
+
 Route::get('/', function () {
     return view('formulario');
 });

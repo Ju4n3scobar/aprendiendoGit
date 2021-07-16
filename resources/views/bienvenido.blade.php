@@ -13,5 +13,9 @@
         <i class="fas fa-user position-absolute top-60 start-50" style="margin-top: 80px; font-size: 30px;"></i>
         <p class="fs-1 position-relative top-50 start-50 translate-middle" style="width: 500px; margin-left: 115px;">Bienvenido {{$userName}}</p>
     </div>
+    <ul>
+        <a href="{{ route('contactListar')  }}"><li style="list-style: none; " class="link-info ">Listar usuarios</li></a>
+        <a href="{{ route('contactConsultar')  }}"><li style="list-style: none; " class="link-info ">Consultar usuarios</li></a>
+    </ul>    
 </body>
 </html>

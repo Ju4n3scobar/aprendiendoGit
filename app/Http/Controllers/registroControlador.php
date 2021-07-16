@@ -46,4 +46,34 @@ class registroControlador extends Controller
         }
 
     }
+
+    public function listarUser (Request $request){
+        return 'Hola listar';
+
+    }
+
+    public function consultarUser (Request $request){
+        return view('consultarUser');
+
+    }
+
+    public function consultarUserB (Request $request, $userNameC){
+        $buscarUser = $request->userNameC;
+        
+        
+
+        if($buscarUser){
+            $usuarios = insertUser::where('userName', $buscarUser)->first();
+            if($usuarios){
+                return view('consultarUserB', ['userNameC' => $userNameC]);
+            }
+            
+            
+        }else{
+            echo 'No existe un usuario con ese nombre';
+            return view('consultarUser');
+        }
+        
+
+    }
 }
