@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::post('/contact', [registroControlador::class, 'inicioSession'])->name('contact');
+Route::post('/contactRegistro', [registroControlador::class, 'registroUser'])->name('contactRegistro');
+
+Route::post('/contactInicio', [registroControlador::class, 'inicioSession'])->name('contactInicio');
 
 Route::get('/', function () {
     return view('formulario');

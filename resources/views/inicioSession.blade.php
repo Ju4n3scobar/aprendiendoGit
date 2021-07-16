@@ -9,7 +9,7 @@
 </head>
 <body>
     
-        <form action="{{ route('contactRegistro') }}" class="position-absolute top-50 start-50 translate-middle" id="formulario" method="POST">
+        <form action="{{ route('contactInicio') }}" class="position-absolute top-50 start-50 translate-middle" id="formulario" method="POST">
             {{ csrf_field() }}
             <div class="border border-info p-3">    
                 <div class="mb-3">
@@ -20,7 +20,7 @@
                     <label for="password" class="form-label">Contraseña</label>
                     <input name="password" type="password" placeholder="Ingrese su contraseña" class="form-control" id="password">
                 </div>
-                <button type="submit" class="position-absolute top-100 start-50 translate-middle btn btn-primary">Registrarme</button>
+                <button type="submit" class="position-absolute top-100 start-50 translate-middle btn btn-primary">IniciarSession</button>
             </div>
         </form>
 </body>
