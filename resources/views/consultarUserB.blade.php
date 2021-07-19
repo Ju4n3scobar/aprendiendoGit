@@ -1,32 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Crud:Usuario</title>
-</head>
-<body>
-    <form action="{{ route('contactConsultarB')  }}" style="margin-left: 700px; margin-top: 20px;">
+@extends('plantilla')
+
+@section('titulo', 'Crud: Usuario')
+    
+@section('contenido')
+    <form action="{{ route('contactConsultarB')  }}" style="margin-left: 700px; margin-top: 20px;" method="post">
         {{ csrf_field() }}
         <label for="userName">Ingrese el nombre de la persona que desea buscar</label>&nbsp;&nbsp;&nbsp;
         <input type="text" id="userName" name="userNameC" placeholder="Ingrese el nombre aqui">
-        <table class="table table-dark table-striped">
-            <tr>
-                <td>
-                    {{$userNameC}}
-                </td>
-            </tr>
+        <table class="position-absolute top-50 start-50 translate-middle table table-dark table-striped" style="margin-top: -50px">
+
+                <tr>
+                    <th>
+                        Id del Usuario
+                    </th>
+                    <th>
+                        Nombre de Usuario
+                    </th>
+                </tr>
+            @foreach ($usuarios as $usuario)
+                <tr> 
+                    <td>
+                        {{$usuario->id}}
+                    </td>
+                    <td>
+                        {{$usuario->userName}}
+                    </td>
+                </tr>        
+            @endforeach
         </table>
         <input type="submit" value="Buscar">
-
-        
-
-        
-
-            
-
     </form>
-</body>
-</html>
+@endsection

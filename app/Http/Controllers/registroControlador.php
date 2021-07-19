@@ -48,7 +48,9 @@ class registroControlador extends Controller
     }
 
     public function listarUser (Request $request){
-        return 'Hola listar';
+
+        $usuarios = insertUser::all();
+        return view('listarUser', ['usuarios' => $usuarios]);
 
     }
 
@@ -57,15 +59,15 @@ class registroControlador extends Controller
 
     }
 
-    public function consultarUserB (Request $request, $userNameC){
+    public function consultarUserB (Request $request){
         $buscarUser = $request->userNameC;
         
         
 
         if($buscarUser){
-            $usuarios = insertUser::where('userName', $buscarUser)->first();
+            $usuarios = insertUser::where('userName', $buscarUser)->get();
             if($usuarios){
-                return view('consultarUserB', ['userNameC' => $userNameC]);
+                return view('consultarUserB', ['usuarios' => $usuarios]);
             }
             
             

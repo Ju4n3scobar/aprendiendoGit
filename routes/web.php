@@ -23,7 +23,7 @@ Route::get('/contactListar', [registroControlador::class, 'listarUser'])->name('
 
 Route::get('/contactConsultar', [registroControlador::class, 'consultarUser'])->name('contactConsultar');
 
-Route::get('/contactConsultarB', [registroControlador::class, 'consultarUserB'])->name('contactConsultarB');
+Route::post('/contactConsultarB', [registroControlador::class, 'consultarUserB'])->name('contactConsultarB');
 
 Route::get('/', function () {
     return view('formulario');
