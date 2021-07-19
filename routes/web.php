@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\pruebaAPI;
 use App\Http\Controllers\registroControlador;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,8 @@ Route::get('/contactListar', [registroControlador::class, 'listarUser'])->name('
 Route::get('/contactConsultar', [registroControlador::class, 'consultarUser'])->name('contactConsultar');
 
 Route::post('/contactConsultarB', [registroControlador::class, 'consultarUserB'])->name('contactConsultarB');
+
+Route::get('/api', [pruebaAPI::class, 'show'])->name('api');
 
 Route::get('/', function () {
     return view('formulario');
